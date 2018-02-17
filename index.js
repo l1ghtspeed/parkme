@@ -1,6 +1,6 @@
 const express = require('express');
 const requireDirectory = require('require-directory');
-const package = require('./package.json');
+const packageConfig = require('./package.json');
 
 // noinspection JSUnusedGlobalSymbols
 global.logger = require('tracer').colorConsole({
@@ -22,7 +22,7 @@ global.logger = require('tracer').colorConsole({
     dateformat: "yyyy-mm-dd HH:MM:ss.l"
 });
 
-global.logger.info("Starting ParkMe Server v" + package.version);
+global.logger.info("Starting ParkMe Server v" + packageConfig.version);
 
 const app = express();
 
