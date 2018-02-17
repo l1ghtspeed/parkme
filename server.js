@@ -76,9 +76,11 @@ global.logger = require('tracer').colorConsole({
     dateformat: "yyyy-mm-dd HH:MM:ss.l"
 });
 
+global.logger.info("Starting ParkMe Server v" + packageConfig.version);
+
 const app = express();
 
-const endpoints = requireDirectory(module, './endpoints');
+const endpoints = requireDirectory(module, "./endpoints");
 
 for (const name in endpoints) {
     // noinspection JSUnfilteredForInLoop
@@ -88,6 +90,10 @@ for (const name in endpoints) {
 }
 
 app.listen(3000, () => {
+<<<<<<< HEAD:server.js
     console.log('Listening on port 3000');
     addStreet( 'King Edward', 300, 400, 2, 5, 120 );
+=======
+    global.logger.info("Listening on port 3000");
+>>>>>>> 7ed35e891f4309dbe50a9acb8fb0a2a00565ac1e:index.js
 });
