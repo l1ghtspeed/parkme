@@ -1,5 +1,60 @@
 const express = require('express');
 const requireDirectory = require('require-directory');
+const firebase = require('firebase');
+const firebaseSecret = require('./firebaseSecret');
+const firebaseKEY = firebaseSecret.apikey;
+
+// Set the configuration for app
+let config = {
+    apiKey: firebaseKEY,
+    authDomain: "parkme-uottahack.firebaseapp.com",
+    databaseURL: "https://parkme-uottahack.firebaseio.com/",
+};
+
+firebase.initializeApp(config);
+
+// Get a reference to the database service
+let database = firebase.database();
+
+
+//function to print database values
+let printData = function() {
+    database.ref().once('value')
+    .then(function(snapshot) {
+        console.log(snapshot.val());
+    })
+    .catch((error) => {
+        console.log('null', error);
+    });
+}
+
+//function to create new 
+
+let addStreet = function( streetname, long, lat, start, end, duration ){
+    firebase.database().ref('/ottawa/' + streetname).update({
+        longitude: long,
+        latitude: lat,
+        start: start,
+        end: end,
+        duration: duration,
+    }).then(() => {
+        printData();
+    }).catch((error) => {
+        console.log('null', error);
+    });
+}
+
+
+
+/*
+database.once('value').then(function (snap) {
+    console.log(snap);
+    callback(null, data);
+}).catch((error) => {
+    console.log('retrieval failed', error);
+    callback('error', null);
+});
+*/
 
 // noinspection JSUnusedGlobalSymbols
 global.logger = require('tracer').colorConsole({
@@ -34,4 +89,5 @@ for (const name in endpoints) {
 
 app.listen(3000, () => {
     console.log('Listening on port 3000');
+    addStreet( 'King Edward', 300, 400, 2, 5, 120 );
 });
