@@ -1,5 +1,6 @@
 const express = require('express');
 const requireDirectory = require('require-directory');
+const package = require('./package.json');
 
 // noinspection JSUnusedGlobalSymbols
 global.logger = require('tracer').colorConsole({
@@ -21,9 +22,11 @@ global.logger = require('tracer').colorConsole({
     dateformat: "yyyy-mm-dd HH:MM:ss.l"
 });
 
+global.logger.info("Starting ParkMe Server v" + package.version);
+
 const app = express();
 
-const endpoints = requireDirectory(module, './endpoints');
+const endpoints = requireDirectory(module, "./endpoints");
 
 for (const name in endpoints) {
     // noinspection JSUnfilteredForInLoop
@@ -33,5 +36,5 @@ for (const name in endpoints) {
 }
 
 app.listen(3000, () => {
-    console.log('Listening on port 3000');
+    global.logger.info("Listening on port 3000");
 });
