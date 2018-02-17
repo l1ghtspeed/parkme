@@ -23,7 +23,7 @@ global.logger = require('tracer').colorConsole({
 
 const app = express();
 
-const endpoints = requireDirectory(module, './api');
+const endpoints = requireDirectory(module, './endpoints');
 
 for (const name in endpoints) {
     // noinspection JSUnfilteredForInLoop
