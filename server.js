@@ -95,7 +95,7 @@ for (const name in endpoints) {
     app[endpoint.method.toLowerCase()]('/api' + endpoint.route, endpoint.handler);
 }
 
-app.use('/public', express.static('./frontend'));
+app.use('/', express.static('./frontend'));
 
 // use it before all route definitions
 // Add headers
@@ -118,7 +118,7 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.get('/', async function(request,response){
+app.get('/api/get-data', async function(request,response){
     //code to perform particular action.
     //To access GET variable use.
     //request.var1, request.var2 etc
