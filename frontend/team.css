@@ -25,7 +25,7 @@ header{
 	background-color: rgba(100, 120, 210, 0.7);
 	cursor: pointer;
   }
-  
+
 
   @media screen and (max-width: 1320px) {
 	.navTab{
@@ -40,19 +40,20 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Titillium Web', sans-serif;
-  background: #107fbf;
+  background-color: rgba(0, 0, 0, .85)
   color: #107fbf;
   display: flex;
   min-height: 100vh;
 }
 .wrapper--team {
+	background-color: white;
   margin: auto;
   padding: 2rem 1rem;
-  background-color: #107fbf;
 }
 
 .l-container {
   margin: 0 auto;
+
 }
 
 @media screen and (min-width: 64em) {
@@ -197,4 +198,3 @@ a.member__link {
 	display: table;
 	margin: auto;
 }
-  

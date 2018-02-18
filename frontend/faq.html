@@ -1,13 +1,22 @@
+<!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="faq.css">
-<link rel="shortcut icon" href="favicon.ico" />
-<title>Park Me</title>
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<!-- Latest compiled and minified JavaScript -->
+  <meta charset="UTF-8">
+  <title>ABOUT</title>
+
+
+  <link rel='stylesheet prefetch' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico" />
+  <title>Park Me</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet2" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Latest compiled and minified JavaScript -->
+    <link rel="stylesheet" type="text/css" href="faq.css">
+
 
 </head>
+
 <body>
   <header id="headerBar">
     <div class="_centering">
@@ -25,53 +34,49 @@
       </h3>
     </div>
   </header>
-<div class='centerplease'>
-  FAQ accordion
-</div>
-<br>
 
-<div class="content">
-<div>
-  <input type="checkbox" id="question1" name="q"  class="questions">
-  <div class="plus">+</div>
-  <label for="question1" class="question">
-    This is the question that will be asked?
-  </label>
-  <div class="answers">
-    What if the answer is really long and wraps the whole page and you never want to finish it but you have to because its the answer!
-  </div>
-</div>
+  <div class="container_a">
 
-<div>
-  <input type="checkbox" id="question2" name="q" class="questions">
-  <div class="plus">+</div>
-  <label for="question2" class="question">
-    Short?
-  </label>
-  <div class="answers">
-    short!
+  <h2 style="letter-spacing:15px;padding-top: 50px;padding-bottom:25px;font-size:50px;margin-bottom:0px;">ABOUT</h2>
+
+  <div class="accordion">
+    <div class="accordion-item">
+      <a>What is ParkMe?</a>
+      <div class="content">
+        <p> ParkMe is a simple to use utility app for when you looking for a parking location in busy places.
+          If you are in need of a place to park, or if you want to help the community by taking a photo of a parking sign
+          (and you get POINTS!), then ParkMe is perfect for you.
+
+        </p>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <a>What inspired ParkMe?</a>
+      <div class="content">
+        <p>The idea of ParkMe was concieved when a young Anthony Aoun couldn't find any parking spots downtown, and didn't know what to do, nor where to go anymore..
+              Let's be honest - finding a parking spot has always been an issue, and we are all waiting for that solution to solve this big problem.
+
+      </div>
+    </div>
+    <div class="accordion-item">
+      <a>Our Goal</a>
+      <div class="content">
+        <p>    To make parking in busy locations more convienent and less confusing for everyone! Going out downtown with friends/family should not = more stress!</p>
+</p>
+      </div>
+    </div>
   </div>
+
 </div>
-  
-<div>
-  <input type="checkbox" id="question3" name="q" class="questions">
-  <div class="plus">+</div>
-  <label for="question3" class="question">
-    But what if the question is really long and wraps the whole page and you feel like you will never finish reading the question?
-  </label>
-  <div class="answers">
-    This is the answer!
-  </div>
-</div>
-</div>
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script type="text/javascript" src="faq.js"></script>
+  <script>
+    const items = document.querySelectorAll(".accordion a");
+    function toggleAccordion(){
+      this.classList.toggle('active');
+      this.nextElementSibling.classList.toggle('active');
+    }
+    items.forEach(item => item.addEventListener('click', toggleAccordion));
+  </script>
+
+</body>
 
 </html>
-
-
-
-
-
-
