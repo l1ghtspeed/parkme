@@ -1,0 +1,90 @@
+body{
+	background-image: url("bg2.jpg");
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+nav{
+	position: relative;
+	width: 99%;
+	text-align:right;
+	line-height: 60px;
+	padding: 30px;
+}
+#logo{
+	position: relative; 
+float: left;
+margin-left: 50px;
+width: 100px;
+height: 100px;
+}
+#faq{
+	position:relative;
+	font-weight: lighter;
+	font-family: roboto;
+	color: #99cc99;
+	font-size: 36px;
+	margin: 20px;
+	font-style: italic;
+
+
+
+}
+#team{
+	position:relative;
+	font-weight: lighter;
+	font-family: roboto;
+	color: #99cc99;
+	font-size: 36px;
+	margin: 20px;
+	font-style: italic;
+
+}
+#name{
+	position: relative;
+	font-weight: normal;
+	font-family: roboto;
+	color: black;
+	font-size: 80px;
+	font-style: bold;
+}
+#description{
+position: relative;
+	font-weight: normal;
+	font-family: roboto;
+	color: black;
+	font-size: 36px;
+
+}
+#main{
+	position: relative;
+	width: 60%;
+	padding-top: 50px;
+	bottom: 20%;
+}
+#main2{
+	width: 100%;
+	z-index: 2;
+	height:80%;
+}
+#space{
+	height: 10px;
+}
+
+#find{
+	position: relative;
+	width: 100px;
+	height: 100px;
+}
+#find2{
+	position:relative;
+	font-family: roboto;
+	color: black;
+	font-size: 100px;
+	margin-top:20%;
+	text-decoration: none;
+}
+#finddiv{
+	margin-top:10%;
+}
