@@ -14,11 +14,11 @@ const rekognition = new AWS.Rekognition({
 
 module.exports = {
     route: "/rekognize",
-    method: "GET",
+    method: "PUT",
     handler: function(req, res) {
         const params = {
             Image: {
-                Bytes: fs.readFileSync('./sample.jpg')
+                Bytes: req.body
             }
         };
 
