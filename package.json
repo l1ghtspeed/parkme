@@ -4,9 +4,11 @@
   "repository": "https://github.com/ZGao28/parkme",
   "license": "AGPL-3.0",
   "scripts": {
-    "start": "node ./index.js"
+    "start": "node ./server.js"
   },
   "dependencies": {
+    "aws-sdk": "^2.197.0",
+    "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "firebase": "^4.10.0",
     "require-directory": "^2.1.1",

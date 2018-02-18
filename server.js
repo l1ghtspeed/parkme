@@ -1,36 +1,37 @@
 const express = require('express');
 const requireDirectory = require('require-directory');
 const firebase = require('firebase');
-const firebaseSecret = require('./firebaseSecret');
-const firebaseKEY = firebaseSecret.apikey;
+const bodyParser = require('body-parser');
+
+const packageConfig = require('./package.json');
+const config = require('./config.json');
 
 // Set the configuration for app
-let config = {
-    apiKey: firebaseKEY,
+let firebaseConfig = {
+    apiKey: config.firebaseSecret,
     authDomain: "parkme-uottahack.firebaseapp.com",
     databaseURL: "https://parkme-uottahack.firebaseio.com/",
 };
 
-firebase.initializeApp(config);
+firebase.initializeApp(firebaseConfig);
 
 // Get a reference to the database service
 let database = firebase.database();
 
-
 //function to print database values
-let printData = function() {
+let printData = function () {
     database.ref().once('value')
-    .then(function(snapshot) {
-        console.log(snapshot.val());
-    })
-    .catch((error) => {
-        console.log('null', error);
-    });
-}
+        .then(function (snapshot) {
+            console.log(snapshot.val());
+        })
+        .catch((error) => {
+            console.log('null', error);
+        });
+};
 
 //function to create new 
 
-let addStreet = function( streetname, long, lat, start, end, duration ){
+let addStreet = function (streetname, long, lat, start, end, duration) {
     firebase.database().ref('/ottawa/' + streetname).update({
         longitude: long,
         latitude: lat,
@@ -42,8 +43,7 @@ let addStreet = function( streetname, long, lat, start, end, duration ){
     }).catch((error) => {
         console.log('null', error);
     });
-}
-
+};
 
 
 /*
@@ -58,7 +58,7 @@ database.once('value').then(function (snap) {
 
 // noinspection JSUnusedGlobalSymbols
 global.logger = require('tracer').colorConsole({
-    transport: function(data) {
+    transport: function (data) {
         console.log(data.output);
     },
     format: [
@@ -82,6 +82,8 @@ const app = express();
 
 const endpoints = requireDirectory(module, "./endpoints");
 
+app.use(bodyParser.raw({type: '*/*', limit: '5mb'}));
+
 for (const name in endpoints) {
     // noinspection JSUnfilteredForInLoop
     let endpoint = endpoints[name];
@@ -90,10 +92,6 @@ for (const name in endpoints) {
 }
 
 app.listen(3000, () => {
-<<<<<<< HEAD:server.js
-    console.log('Listening on port 3000');
-    addStreet( 'King Edward', 300, 400, 2, 5, 120 );
-=======
     global.logger.info("Listening on port 3000");
->>>>>>> 7ed35e891f4309dbe50a9acb8fb0a2a00565ac1e:index.js
+    addStreet('King Edward', 300, 400, 2, 5, 120);
 });
