@@ -92,8 +92,8 @@ app.use(bodyParser.raw({type: '*/*', limit: '5mb'}));
 for (const name in endpoints) {
     // noinspection JSUnfilteredForInLoop
     let endpoint = endpoints[name];
-    global.logger.debug(`Adding ${endpoint.method.toUpperCase()} handler for route ${endpoint.route}`);
-    app[endpoint.method.toLowerCase()](endpoint.route, endpoint.handler);
+    global.logger.debug(`Adding ${endpoint.method.toUpperCase()} handler for route /api${endpoint.route}`);
+    app[endpoint.method.toLowerCase()]('/api' + endpoint.route, endpoint.handler);
 }
 app.use('/', express.static('public/public'));
 
