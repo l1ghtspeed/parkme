@@ -18,7 +18,7 @@ module.exports = {
     handler: function(req, res) {
         const params = {
             Image: {
-                Bytes: fs.readFileSync('./a.jpg')
+                Bytes: fs.readFileSync('./sample.jpg')
             }
         };
 
