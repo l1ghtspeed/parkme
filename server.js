@@ -17,15 +17,19 @@ firebase.initializeApp(config);
 let database = firebase.database();
 
 
-//function to print database values
-let printData = function() {
-    database.ref().once('value')
+//store current database info
+let currentParking;
+
+//function to get database values
+let getData = function() {
+    return database.ref().once('value')
     .then(function(snapshot) {
-        console.log(snapshot.val());
+        currentParking = snapshot.val();
     })
     .catch((error) => {
         console.log('null', error);
     });
+    
 }
 
 //function to create new 
@@ -38,7 +42,7 @@ let addStreet = function( streetname, long, lat, start, end, duration ){
         end: end,
         duration: duration,
     }).then(() => {
-        printData();
+        getData();
     }).catch((error) => {
         console.log('null', error);
     });
@@ -76,7 +80,7 @@ global.logger = require('tracer').colorConsole({
     dateformat: "yyyy-mm-dd HH:MM:ss.l"
 });
 
-global.logger.info("Starting ParkMe Server v" + packageConfig.version);
+//lobal.logger.info("Starting ParkMe Server v" + packageConfig.version);
 
 const app = express();
 
@@ -88,12 +92,40 @@ for (const name in endpoints) {
     global.logger.debug(`Adding ${endpoint.method.toUpperCase()} handler for route ${endpoint.route}`);
     app[endpoint.method.toLowerCase()](endpoint.route, endpoint.handler);
 }
+app.use('/', express.static('public/public'));
+
+
+
+// use it before all route definitions
+// Add headers
+app.use(function (req, res, next) {
+
+    // Website you wish to allow to connect
+    res.setHeader('Access-Control-Allow-Origin', 'null');
+
+    // Request methods you wish to allow
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+
+    // Request headers you wish to allow
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+    // Set to true if you need the website to include cookies in the requests sent
+    // to the API (e.g. in case you use sessions)
+    res.setHeader('Access-Control-Allow-Credentials', true);
+
+    // Pass to next layer of middleware
+    next();
+});
+
+app.get('/', async function(request,response){
+    //code to perform particular action.
+    //To access GET variable use.
+    //request.var1, request.var2 etc
+    await getData();
+    response.send(currentParking);
+    response.end();
+});
 
 app.listen(3000, () => {
-<<<<<<< HEAD:server.js
     console.log('Listening on port 3000');
-    addStreet( 'King Edward', 300, 400, 2, 5, 120 );
-=======
-    global.logger.info("Listening on port 3000");
->>>>>>> 7ed35e891f4309dbe50a9acb8fb0a2a00565ac1e:index.js
 });
