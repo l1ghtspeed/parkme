@@ -1,4 +1,40 @@
+header{
+	position: fixed;
+	width: 100%;
+	height: 47.5px;
+	padding: 0px;
+	z-index: 100;
+	-webkit-transition-duration: 1.2s; /* Safari */
+	transition-duration: 1.2s;
+  }
+  .navTab{
+	float: left;
+	color: rgb(12, 16, 20);
+	margin: 0px;
+	font-size: 0.85em;
+	letter-spacing: 0.25em;
+	padding: 15px 16px 15px 20px;
+	border-radius: 2px;
+	-webkit-transition-duration: 0.8s; /* Safari */
+	transition-duration: 0.8s;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 600;
+	display: block;
+  }
+  .navTab:hover{
+	background-color: rgba(100, 120, 210, 0.7);
+	cursor: pointer;
+  }
+  
 
+  @media screen and (max-width: 1320px) {
+	.navTab{
+		padding-left: 10px;
+		padding-right: 10px;
+		letter-spacing: auto;
+		margin-left: 0px;
+	}
+  }
 
 body {
   margin: 0;
@@ -96,7 +132,7 @@ body {
   bottom: 1rem;
   background: rgba(0, 0, 0, 0.85);
   -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
   -webkit-transition: opacity 0.4s ease-in-out;
   transition: opacity 0.4s ease-in-out;
 }
@@ -133,6 +169,7 @@ a.member__link {
 
 .team-grid__member:hover .member__info {
   opacity: 1;
+  cursor: pointer;
 }
 
 .member__info:before {
@@ -156,69 +193,8 @@ a.member__link {
   display: inline-block;
 }
 
-header {
-  background: transparent;
-  position: fixed;
-  width: 100%;
-  right: 100px;
-  z-index: 10000;
-  font-family: "Titillium Web", sans-serif;
-  font-size: 20px;
+._centering{
+	display: table;
+	margin: auto;
 }
-
-header::after {
-  content: '';
-  display: table;
-  clear: both;
-}
-
-.logo {
-  float: left;
-  padding: 10px 0;
-}
-
-nav {
-  float: right;
-}
-
-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-nav li {
-  display: inline-block;
-  margin-left: 70px;
-  padding-top: 15px;
-  margin-top: 20px;
-
-  position: relative;
-}
-
-nav a {
-  color: #000;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-nav a:hover {
-  color: #56a7d5;
-}
-
-nav a::before {
-  content: '';
-  display: block;
-  height: 5px;
-  background-color: #56a7d5;
-
-  position: absolute;
-  top: 0;
-  width: 0%;
-
-  transition: all ease-in-out 250ms;
-}
-
-nav a:hover::before {
-  width: 100%;
-}
+  

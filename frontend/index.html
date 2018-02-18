@@ -1,43 +1,56 @@
-<html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<title>ParkMe</title>
+    <link rel="icon" href="./src/logo.png" type="image/x-icon"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400" rel="stylesheet">
 
-<head>
-<link rel="stylesheet" type="text/css" href="stylesheet.css">
-<link rel="shortcut icon" href="./src/logo.png" />
-<title>Park Me</title>
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<!-- Latest compiled and minified JavaScript -->
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-</head>
+    <!-- Custom styles for this template -->
+    <link href="./stylesheet.css" rel="stylesheet">
+  </head>
 
-<body>
-	<nav>
-		<a href="index.html">
-		<img src="./src/logo.png" alt="logo" id = "logo";></a>
-		<a href="./faq.html" id="faq" style = "text-align:center">FAQ</a>
-		<a href="./team.html" id="team" style = "text-align:center">TEAM</a>
-	</nav>
-<div id="space"></div>
-<div style="text-align:center;" class="container" id="main2">
-<div style="text-align:center;" class="container" id="main">
-<h1 id="name" align="center">
-	ParkMe
-</h1>
-<h1 id="description" align="center">
-	We know how much of a pain it is to find parking in busy places - but don't worry, we've got you covered!
-	<br>
-	Click the button below to find parking!
-</h1>
-<div id="finddiv">
-<a href="index.html" id = "find2">
-	Find Parking <img src="./src/search.png" id="find";></a>
-</div>
-</div>
-</div>
+  <body>
+    <header id="headerBar">
+      <div class="_centering">
+		<h3 onclick="javascript:location.href='./index.html'" id="mathTab" class="navTab">
+          HOME
+        </h3>
+        <h3 onclick="javascript:location.href='./map.html'" id="homeTab" class="navTab">
+          MAP
+          </h3>
+        <h3 onclick="javascript:location.href='./faq.html'" id="programmingTab" class="navTab">
+          ABOUT
+        </h3>
+        <h3 onclick="javascript:location.href='./team.html'" id="mathTab" class="navTab">
+          TEAM
+        </h3>
+      </div>
+    </header>
 
+    <main role="main">
 
-
-
-
-</body>
+      <section class="jumbotron text-center" style="background-color: rgb(248, 247, 250)">
+        <div class="container" >
+          <img id="main_img" src="./src/simpleLogo.png" onclick="javascript:location.href='http:zigao.io'">
+          <h1 class="jumbotron-heading" style="font-size: 80px; font-family: 'Montserrat', sans-serif; margin-top: 20px; padding-bottom: 30px">Park<span style="color: rgb(49, 49, 190)">Me</span></h1>
+          <p class="lead text-muted" style="padding-bottom: 50px">Ever find yourself downtown or in a busy place that is <i>impossible</i> to locate parking?<br><br>Don't worry my friend - you're not alone, <b>and we've got you covered.</b></p>
+		</div>
+		<div id='mapbtn' onclick='javascript:location.href="./map.html"'>Find Parking</div> 
+		<div class='btn_lol' onclick='javascript:location.href="./map.html"'>Find Parking</div>
+		<div class='btn_lol' onclick='javascript:location.href="./cam.html"'>Add Parking</div>
+	  </section>
+	  
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  </body>
 </html>

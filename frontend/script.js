@@ -28,14 +28,17 @@ async function addMarkers(map, markers){
     var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
     var contentString;
     for (var street in markers){
+    	
         markerArray[i] = new google.maps.Marker({
             map: map,
             position: {lat: markers[street].longitude, lng: markers[street].latitude},
-            icon: './parkingicon.png',
+            icon: './src/parkingicon.png',
             title: `Parking at ${street}`
         });
-
+        var x = String(street);       
+        x = x.charAt(0).toUpperCase() + x.slice(1);
         contentString = `
+        	<h2>${x} Street - Ottawa, ON</h2>
             <h3><b>Free Parking Time</b></h3>
             <p>${markers[street].start}:00 to ${markers[street].end}:00</p>
             <h3><b>Max Parking Duration<b></h3>

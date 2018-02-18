@@ -1,99 +1,226 @@
-body{
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background: rgb(100, 100, 200);
-}
-nav{
-	position: relative;
-	width: 99%;
-	text-align:right;
-	line-height: 20px;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	background-color: rgba(0, 0, 0, 0.5);
-}
-#logo{
-	position: absolute; 
-	left: 20px;
-	top: -10px;
-	margin-left: 50px;
-	width: 100px;
-	height: 100px;
-	margin-top: 0px;
-	padding-top: 0px;
-}
-#faq{
-	position:relative;
-	font-weight: lighter;
-	font-family: roboto;
-	color: #99cc99;
-	font-size: 25px;
-	margin: 20px;
-	font-style: italic;
-}
-#team{
-	position:relative;
-	font-weight: lighter;
-	font-family: roboto;
-	color: #99cc99;
-	font-size: 25px;
-	margin: 20px;
-	font-style: italic;
-
-}
-#name{
-	position: relative;
-	font-weight: normal;
-	font-family: roboto;
-	color: black;
-	font-size: 80px;
-	font-style: bold;
-}
-#description{
-position: relative;
-	font-weight: normal;
-	font-family: roboto;
-	color: black;
-	font-size: 36px;
-
-}
-#main{
-	position: relative;
-	width: 60%;
-	padding-top: 50px;
-	bottom: 20%;
-}
-#main2{
-	width: 100%;
-	z-index: 2;
-	height:80%;
-}
-#space{
-	height: 10px;
-}
-
-#find{
-	position: relative;
-	width: 100px;
-	height: 100px;
-}
-#find2{
-	position:relative;
-	font-family: roboto;
-	color: black;
-	font-size: 100px;
-	margin-top:20%;
-	text-decoration: none;
-}
-#finddiv{
-	margin-top:10%;
-}
-
-#background-picture{
-	width: 100%;
-	height: 100%;
+header{
 	position: fixed;
-	z-index: -100;
-}
+	width: 100%;
+	height: 47.5px;
+	padding: 0px;
+	z-index: 100;
+	-webkit-transition-duration: 1.2s; /* Safari */
+	transition-duration: 1.2s;
+  }
+  .navTab{
+	float: left;
+	color: rgb(12, 16, 20);
+	margin: 0px;
+	font-size: 0.85em;
+	letter-spacing: 0.25em;
+	padding: 15px 16px 15px 20px;
+	border-radius: 2px;
+	-webkit-transition-duration: 0.8s; /* Safari */
+	transition-duration: 0.8s;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 600;
+	display: block;
+  }
+  .navTab:hover{
+	background-color: rgba(100, 120, 210, 0.7);
+	cursor: pointer;
+  }
+  
+
+  @media screen and (max-width: 1320px) {
+	.navTab{
+		padding-left: 10px;
+		padding-right: 10px;
+		letter-spacing: auto;
+		margin-left: 0px;
+	}
+  }
+  
+  
+  
+  #logo_tab{
+	float: left;
+  }
+  
+  
+  
+  ._centering{
+	display: table;
+	margin: auto;
+  }
+  
+  
+  
+  
+  
+  .container {
+	max-width: 960px;
+  }
+  
+  /*
+   * Custom translucent site header
+   */
+  
+  .site-header {
+	background-color: rgba(0, 0, 0, .85);
+	-webkit-backdrop-filter: saturate(180%) blur(20px);
+	backdrop-filter: saturate(180%) blur(20px);
+  }
+  
+  
+  
+  
+  .site-header a {
+	color: #999;
+	transition: ease-in-out color .15s;
+  }
+  .site-header a:hover {
+	color: #fff;
+	text-decoration: none;
+  }
+  
+  /*
+   * Dummy devices (replace them with your own or something else entirely!)
+   */
+  
+  .product-device {
+	position: absolute;
+	right: 10%;
+	bottom: -30%;
+	width: 300px;
+	height: 540px;
+	background-color: #333;
+	border-radius: 21px;
+	-webkit-transform: rotate(30deg);
+	transform: rotate(30deg);
+  }
+  
+  .product-device::before {
+	position: absolute;
+	top: 10%;
+	right: 10px;
+	bottom: 10%;
+	left: 10px;
+	content: "";
+	background-color: rgba(255, 255, 255, .1);
+	border-radius: 5px;
+  }
+  
+  .product-device-2 {
+	top: -25%;
+	right: auto;
+	bottom: 0;
+	left: 5%;
+	background-color: #e5e5e5;
+  }
+  
+  
+  /*
+   * Extra utilities
+   */
+  
+  .border-top { border-top: 1px solid #e5e5e5; }
+  .border-bottom { border-bottom: 1px solid #e5e5e5; }
+  
+  .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+  
+  .flex-equal > * {
+	-ms-flex: 1;
+	-webkit-box-flex: 1;
+	flex: 1;
+  }
+  @media (min-width: 768px) {
+	.flex-md-equal > * {
+	  -ms-flex: 1;
+	  -webkit-box-flex: 1;
+	  flex: 1;
+	}
+  }
+  
+  .overflow-hidden { overflow: hidden; }
+  
+  .course_heading{
+	font-family: "Montserrat", sans-serif;
+	letter-spacing: 2px;
+	margin-top: 40px;
+  }
+  
+  img{
+	margin-top: 20px;
+  }
+  
+  .course_button{
+	margin-top: 20px;
+	height: 40px;
+	background-color: rgba(12, 16, 20,  0.8);
+	font-family: "Montserrat", sans-serif;
+	letter-spacing: 0.25em;
+	border: none;
+  }
+  
+  .course_button:hover{
+	background-color: rgba(100, 120, 210,  0.8);
+	border: none;
+  }
+  
+  .notes_link{
+	clear: both;
+	text-align: center;
+	display: block;
+  }
+  
+  ._pad{
+	padding-left: 10px; 
+	padding-right: 10px;
+  }
+  
+  
+  #main_img{
+	-webkit-transition-duration: 1s; /* Safari */
+	  transition-duration: 1s;
+	  width: 150px; height: 150px; display: block; margin: auto; margin-top: 50px;
+  }
+  
+
+  
+  .invis{
+	display: none;
+  }
+
+
+  .btn_lol{
+	  padding: 15px;
+	  font-family: 'Montserrat', sans-serif;
+	  font-size: 20px;
+	  margin-top: 10px;
+	  background-color: rgba(100, 120, 210,  0.8);
+	  color: #e5e5e5;
+	  display: none;
+  }
+
+  .btn_lol:hover{
+	color: rgba(100, 120, 210,  0.8);
+	background-color: #e5e5e5; 
+  }
+
+  #mapbtn{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 50px;
+	font-weight: bold;
+	text-decoration: underline;
+  }
+
+
+  #mapbtn:hover{
+	text-decoration: none;
+	cursor: pointer;
+  }
+
+  @media screen and (max-width: 650px){
+	  #mapbtn{
+		  display: none;
+	  }
+	  .btn_lol{
+		  display: block;
+	  }
+  }
