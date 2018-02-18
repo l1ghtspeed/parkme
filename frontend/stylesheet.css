@@ -1,0 +1,99 @@
+body{
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background: rgb(100, 100, 200);
+}
+nav{
+	position: relative;
+	width: 99%;
+	text-align:right;
+	line-height: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+#logo{
+	position: absolute; 
+	left: 20px;
+	top: -10px;
+	margin-left: 50px;
+	width: 100px;
+	height: 100px;
+	margin-top: 0px;
+	padding-top: 0px;
+}
+#faq{
+	position:relative;
+	font-weight: lighter;
+	font-family: roboto;
+	color: #99cc99;
+	font-size: 25px;
+	margin: 20px;
+	font-style: italic;
+}
+#team{
+	position:relative;
+	font-weight: lighter;
+	font-family: roboto;
+	color: #99cc99;
+	font-size: 25px;
+	margin: 20px;
+	font-style: italic;
+
+}
+#name{
+	position: relative;
+	font-weight: normal;
+	font-family: roboto;
+	color: black;
+	font-size: 80px;
+	font-style: bold;
+}
+#description{
+position: relative;
+	font-weight: normal;
+	font-family: roboto;
+	color: black;
+	font-size: 36px;
+
+}
+#main{
+	position: relative;
+	width: 60%;
+	padding-top: 50px;
+	bottom: 20%;
+}
+#main2{
+	width: 100%;
+	z-index: 2;
+	height:80%;
+}
+#space{
+	height: 10px;
+}
+
+#find{
+	position: relative;
+	width: 100px;
+	height: 100px;
+}
+#find2{
+	position:relative;
+	font-family: roboto;
+	color: black;
+	font-size: 100px;
+	margin-top:20%;
+	text-decoration: none;
+}
+#finddiv{
+	margin-top:10%;
+}
+
+#background-picture{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: -100;
+}

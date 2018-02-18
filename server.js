@@ -1,17 +1,19 @@
 const express = require('express');
 const requireDirectory = require('require-directory');
 const firebase = require('firebase');
-const firebaseSecret = require('./firebaseSecret');
-const firebaseKEY = firebaseSecret.apikey;
+const bodyParser = require('body-parser');
+
+const packageConfig = require('./package.json');
+const config = require('./config.json');
 
 // Set the configuration for app
-let config = {
-    apiKey: firebaseKEY,
+let firebaseConfig = {
+    apiKey: config.firebaseSecret,
     authDomain: "parkme-uottahack.firebaseapp.com",
     databaseURL: "https://parkme-uottahack.firebaseio.com/",
 };
 
-firebase.initializeApp(config);
+firebase.initializeApp(firebaseConfig);
 
 // Get a reference to the database service
 let database = firebase.database();
@@ -34,7 +36,7 @@ let getData = function() {
 
 //function to create new 
 
-let addStreet = function( streetname, long, lat, start, end, duration ){
+let addStreet = function (streetname, long, lat, start, end, duration) {
     firebase.database().ref('/ottawa/' + streetname).update({
         longitude: long,
         latitude: lat,
@@ -46,8 +48,7 @@ let addStreet = function( streetname, long, lat, start, end, duration ){
     }).catch((error) => {
         console.log('null', error);
     });
-}
-
+};
 
 
 /*
@@ -62,7 +63,7 @@ database.once('value').then(function (snap) {
 
 // noinspection JSUnusedGlobalSymbols
 global.logger = require('tracer').colorConsole({
-    transport: function(data) {
+    transport: function (data) {
         console.log(data.output);
     },
     format: [
@@ -85,6 +86,8 @@ global.logger = require('tracer').colorConsole({
 const app = express();
 
 const endpoints = requireDirectory(module, "./endpoints");
+
+app.use(bodyParser.raw({type: '*/*', limit: '5mb'}));
 
 for (const name in endpoints) {
     // noinspection JSUnfilteredForInLoop
