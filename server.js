@@ -31,7 +31,6 @@ let getData = function() {
     .catch((error) => {
         console.log('null', error);
     });
-    
 }
 
 //function to create new 
@@ -95,9 +94,8 @@ for (const name in endpoints) {
     global.logger.debug(`Adding ${endpoint.method.toUpperCase()} handler for route /api${endpoint.route}`);
     app[endpoint.method.toLowerCase()]('/api' + endpoint.route, endpoint.handler);
 }
-app.use('/', express.static('public/public'));
 
-
+app.use('/public', express.static('./frontend'));
 
 // use it before all route definitions
 // Add headers

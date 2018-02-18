@@ -12,7 +12,7 @@ function initMap() {
 async function loadMapVals(map){
     let mapData;
     await $.ajax({
-        url: 'http://localhost:3000',
+        url: '/',
         cache: false,
         success: (data) => mapData = data,
         error: ()=> console.log('Could Not Get Map Data')
