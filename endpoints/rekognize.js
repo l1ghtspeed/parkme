@@ -1,6 +1,6 @@
 const AWS = require('aws-sdk');
 const fs = require('fs');
-const config = require('../config');
+const config = require('../config.json');
 
 let durationPattern = /([0-9]+) *(H|min)/gi;
 let hrsPattern = /([1-9]+)[0 ]*(AM|PM)[ -]*([1-9]+)[0 ]*(AM|PM)/gi;

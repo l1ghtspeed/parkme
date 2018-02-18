@@ -1,5 +1,5 @@
 {
-  "firebase-secret": "your-firebase-secret",
+  "firebaseSecret": "your-firebase-secret",
   "awsAccessKeyId": "your-aws-access-key-id",
   "awsSecretAccessKey": "your-aws-secret-access-key"
 }

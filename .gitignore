@@ -60,6 +60,5 @@ typings/
 # next.js build output
 .next
 
-
-# secret key
-firebaseSecret.js
+# config
+config.json
